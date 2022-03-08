@@ -9,12 +9,10 @@ class Order
         
     end
 
-    def verify
-        @total = []
-        @dishes.each do
-            |i| @total << @menu.menu[i]
+    def total
+        @dishes.sum do |i|
+            @menu.menu[i]
         end
-        @total.sum
     end
 
 end
